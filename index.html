@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WaxDiva | Professional Waxing by Renelda</title>
+<meta name="description" content="WaxDiva by Renelda — professional waxing in Moedwil, Swartruggens, Koster, Rustenburg and surrounding areas. Home studio and mobile appointments.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0d0b0a;
+    --bg-soft:#141110;
+    --panel:#1b1613;
+    --panel-2:#221b16;
+    --gold:#c9a15c;
+    --gold-soft:#e3c98d;
+    --bronze:#7d6138;
+    --cream:#f4ead9;
+    --muted:#a8998a;
+    --line:#382d22;
+    --green:#7c9473;
+    --sage:#3f4a3a;
+    --cacao:#5a3a2a;
+    --mint:#4a5c50;
+    --radius:2px;
+    --maxw:1180px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--cream);
+    font-family:'Jost',sans-serif;
+    font-weight:300;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.serif{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:500;
+    line-height:1.15;
+    margin:0;
+    color:var(--cream);
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+  .eyebrow{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:1.15rem;
+    color:var(--gold-soft);
+    letter-spacing:.02em;
+  }
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:14px 28px;
+    font-family:'Jost',sans-serif;
+    font-size:.92rem;
+    letter-spacing:.03em;
+    border:1px solid var(--gold);
+    color:var(--cream);
+    transition:background .25s ease, color .25s ease;
+    white-space:nowrap;
+  }
+  .btn-solid{background:var(--gold);color:#1a1410;border-color:var(--gold);}
+  .btn-solid:hover{background:var(--gold-soft);border-color:var(--gold-soft);}
+  .btn-line:hover{background:rgba(201,161,92,.1);}
+  .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);}
+
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(13,11,10,.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 24px;
+    max-width:var(--maxw);margin:0 auto;
+  }
+  .logo{display:flex;align-items:center;gap:10px;}
+  .logo-word{height:26px;width:auto;flex:none;}
+  nav.links{display:none;gap:34px;align-items:center;font-size:.85rem;letter-spacing:.03em;}
+  nav.links a{color:var(--muted);transition:color .2s;}
+  nav.links a:hover{color:var(--gold-soft);}
+  .nav-cta{display:none;}
+  .burger{background:none;border:none;color:var(--cream);font-size:1.5rem;cursor:pointer;padding:4px;}
+  @media(min-width:920px){
+    nav.links{display:flex;}
+    .nav-cta{display:inline-flex;}
+    .burger{display:none;}
+  }
+  #mobileMenu{
+    display:none;flex-direction:column;gap:0;
+    border-top:1px solid var(--line);
+    background:var(--bg-soft);
+  }
+  #mobileMenu.open{display:flex;}
+  #mobileMenu a{padding:16px 24px;border-bottom:1px solid var(--line);font-size:.95rem;color:var(--muted);}
+  #mobileMenu a.mm-cta{color:var(--gold-soft);}
+
+  /* Hero */
+  .hero{
+    position:relative;
+    padding:28px 0 84px;
+    overflow:hidden;
+    background:
+      radial-gradient(ellipse 90% 60% at 50% -10%, rgba(201,161,92,.14), transparent 60%),
+      radial-gradient(ellipse 60% 50% at 90% 20%, rgba(124,148,115,.10), transparent 60%),
+      var(--bg);
+  }
+  .hero .wrap{position:relative;z-index:2;}
+  .hero-photo{
+    position:relative;
+    aspect-ratio:16/9.5;
+    overflow:hidden;
+    border:1px solid var(--line);
+    margin-bottom:44px;
+    filter:saturate(1.05) contrast(1.02);
+  }
+  .hero-photo img{
+    width:100%;height:100%;object-fit:cover;object-position:50% 35%;
+    filter:blur(.4px);
+  }
+  .hero-photo::after{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(180deg, rgba(13,11,10,.05) 0%, rgba(13,11,10,.55) 100%);
+  }
+  .hero-center{max-width:640px;margin:0 auto;text-align:center;}
+  .eyebrow-line{
+    display:flex;align-items:center;justify-content:center;gap:14px;
+    font-size:.74rem;letter-spacing:.22em;color:var(--gold-soft);
+    text-transform:uppercase;margin-bottom:18px;
+  }
+  .eyebrow-line::before,.eyebrow-line::after{content:'';width:34px;height:1px;background:var(--bronze);}
+  .hero h1{
+    font-size:2.1rem;
+    margin:0 auto 30px;
+  }
+  .hero h1 .accent{color:var(--gold-soft);}
+  .hero p.lede{
+    color:var(--muted);
+    max-width:46ch;
+    font-size:1.02rem;
+    margin:0 auto 34px;
+  }
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:12px;justify-content:center;}
+  .badge-pill{
+    display:inline-flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:center;
+    border:1px solid var(--line);border-radius:999px;
+    padding:12px 26px;font-size:.8rem;color:var(--muted);
+    margin:0 auto 38px;
+  }
+  .badge-pill span{display:flex;align-items:center;gap:7px;}
+  .badge-pill svg{width:14px;height:14px;flex:none;color:var(--gold);}
+  .badge-pill .div{width:1px;height:14px;background:var(--line);}
+  @media(min-width:720px){
+    .hero{padding:44px 0 120px;}
+    .hero h1{font-size:2.7rem;}
+  }
+
+  section{padding:76px 0;}
+  .section-head{max-width:640px;margin-bottom:48px;}
+  .section-head h2{font-size:2.1rem;margin-top:10px;}
+  .section-head h2 em{color:var(--gold-soft);font-style:italic;}
+  .section-head p{color:var(--muted);margin-top:14px;max-width:52ch;}
+
+  /* Services */
+  .services{background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .service-grid{display:grid;grid-template-columns:1fr;gap:1px;background:var(--line);border:1px solid var(--line);}
+  .service-card{background:var(--bg-soft);padding:38px 32px;}
+  .service-glyph{width:34px;height:34px;color:var(--gold);margin-bottom:22px;}
+  .service-card h3{font-size:1.4rem;margin-bottom:10px;}
+  .service-card p{color:var(--muted);font-size:.93rem;margin-bottom:18px;}
+  .service-card a{font-size:.82rem;color:var(--gold-soft);border-bottom:1px solid var(--bronze);padding-bottom:2px;}
+  @media(min-width:720px){.service-grid{grid-template-columns:repeat(3,1fr);}}
+
+  /* Speciality */
+  .speciality .wrap{display:grid;gap:44px;}
+  .spec-visual{
+    aspect-ratio:4/3;
+    border:1px solid var(--line);
+    background:
+      radial-gradient(circle at 30% 30%, rgba(201,161,92,.15), transparent 55%),
+      radial-gradient(circle at 75% 70%, rgba(124,148,115,.12), transparent 55%),
+      var(--panel);
+    position:relative;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .spec-visual svg{width:56%;color:var(--gold);opacity:.85;}
+  .spec-list{list-style:none;margin:26px 0 32px;padding:0;display:flex;flex-direction:column;gap:14px;}
+  .spec-list li{display:flex;gap:12px;font-size:.94rem;color:var(--cream);}
+  .spec-list svg{width:16px;height:16px;flex:none;color:var(--gold);margin-top:4px;}
+  @media(min-width:900px){
+    .speciality .wrap{grid-template-columns:1fr 1fr;align-items:center;}
+  }
+
+  /* Pricing */
+  .pricing{background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .price-groups{display:grid;grid-template-columns:1fr;gap:40px;}
+  @media(min-width:840px){.price-groups{grid-template-columns:1fr 1fr;}}
+  .price-group h3{
+    font-size:.78rem;letter-spacing:.16em;color:var(--gold);
+    text-transform:uppercase;padding-bottom:14px;border-bottom:1px solid var(--line);margin-bottom:6px;
+  }
+  .price-row{
+    display:flex;justify-content:space-between;align-items:baseline;
+    padding:15px 0;border-bottom:1px solid var(--line);
+    font-family:'Cormorant Garamond',serif;font-size:1.15rem;
+  }
+  .price-row .tag{font-size:.68rem;letter-spacing:.1em;color:var(--gold);border:1px solid var(--bronze);padding:2px 8px;margin-left:10px;font-family:'Jost',sans-serif;vertical-align:middle;}
+  .price-row .amt{color:var(--gold-soft);font-size:1.15rem;}
+  .price-note{margin-top:26px;font-size:.82rem;color:var(--muted);}
+
+  /* Retail */
+  .retail-grid{display:grid;grid-template-columns:1fr;gap:26px;}
+  @media(min-width:640px){.retail-grid{grid-template-columns:1fr 1fr;}}
+  @media(min-width:1000px){.retail-grid{grid-template-columns:repeat(3,1fr);}}
+  .product-card{
+    border:1px solid var(--line);
+    display:flex;flex-direction:column;
+    overflow:hidden;
+  }
+  .product-photo{
+    aspect-ratio:4/3.2;
+    display:flex;align-items:center;justify-content:center;
+    padding:20px;
+    position:relative;
+    overflow:hidden;
+  }
+  .product-photo img{
+    max-height:100%;width:auto;max-width:82%;
+    mix-blend-mode:multiply;
+    filter:contrast(1.03);
+  }
+  .bg-green{background:radial-gradient(circle at 35% 20%, #cfe0c4, #7c9473 75%);}
+  .bg-mint{background:radial-gradient(circle at 30% 25%, #d9e6de, #4a5c50 80%);}
+  .bg-cacao{background:radial-gradient(circle at 35% 25%, #e7cbb3, #5a3a2a 85%);}
+  .bg-sage{background:radial-gradient(circle at 30% 20%, #dbe4d3, #3f4a3a 80%);}
+  .bg-gold{background:radial-gradient(circle at 35% 20%, #f0ddb0, #8a6d3b 85%);}
+  .product-info{padding:22px 24px 26px;background:var(--panel);flex:1;}
+  .product-brand{font-size:.68rem;letter-spacing:.16em;color:var(--gold);text-transform:uppercase;}
+  .product-info h3{font-size:1.28rem;margin:8px 0 8px;}
+  .product-info p{font-size:.87rem;color:var(--muted);}
+  .retail-cta{margin-top:38px;text-align:center;}
+
+  /* Info strip */
+  .info-strip{border-top:1px solid var(--line);}
+  .info-grid{display:grid;grid-template-columns:1fr;gap:1px;background:var(--line);border:1px solid var(--line);}
+  @media(min-width:760px){.info-grid{grid-template-columns:repeat(3,1fr);}}
+  .info-cell{background:var(--bg);padding:34px 32px;}
+  .info-cell .eyebrow{font-size:.7rem;letter-spacing:.16em;font-style:normal;color:var(--gold);text-transform:uppercase;}
+  .info-cell h3{font-size:1.3rem;margin:10px 0 8px;}
+  .info-cell p{color:var(--muted);font-size:.88rem;}
+
+  /* CTA */
+  .cta-final{
+    text-align:center;
+    background:
+      radial-gradient(ellipse 70% 80% at 50% 0%, rgba(201,161,92,.14), transparent 60%),
+      var(--bg-soft);
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  }
+  .cta-final h2{font-size:2.3rem;max-width:16ch;margin:12px auto 30px;}
+  .cta-final .hero-ctas{justify-content:center;}
+
+  /* Wax strip peel divider */
+  .peel-divider{position:relative;height:170vh;}
+  .peel-sticky{
+    position:sticky;top:0;height:100vh;
+    overflow:hidden;display:flex;align-items:center;justify-content:center;
+    background:var(--bg);
+  }
+  .peel-content{max-width:520px;text-align:center;padding:0 24px;position:relative;z-index:1;}
+  .peel-content h2{font-size:2.1rem;margin:14px 0 16px;}
+  .peel-content h2 em{color:var(--gold-soft);font-style:italic;}
+  .peel-content p{color:var(--muted);margin:0 auto;}
+  .peel-strip{
+    position:absolute;inset:0;z-index:2;
+    transform-origin:50% 0%;
+    will-change:transform,opacity;
+  }
+  .peel-strip svg{width:100%;height:100%;display:block;}
+  @media(min-width:720px){.peel-content h2{font-size:2.8rem;}}
+
+  /* Brand mark */
+  .brand-mark{padding:50px 0 70px;text-align:center;}
+  .brand-full{max-width:420px;width:100%;margin:0 auto;}
+
+  /* Footer */
+  footer{padding:56px 0 30px;}
+  .foot-top{display:flex;flex-direction:column;gap:34px;margin-bottom:40px;}
+  @media(min-width:760px){.foot-top{flex-direction:row;justify-content:space-between;align-items:flex-start;}}
+  .foot-brand .logo{margin-bottom:14px;}
+  .foot-brand p{color:var(--muted);font-size:.85rem;max-width:36ch;}
+  .foot-contact{display:flex;flex-direction:column;gap:10px;font-size:.9rem;}
+  .foot-contact a{color:var(--cream);}
+  .foot-contact a:hover{color:var(--gold-soft);}
+  .foot-bottom{
+    border-top:1px solid var(--line);padding-top:22px;
+    display:flex;flex-direction:column;gap:8px;
+    font-size:.75rem;color:var(--muted);
+  }
+  @media(min-width:760px){.foot-bottom{flex-direction:row;justify-content:space-between;}}
+
+  /* WhatsApp float */
+  .wa-float{
+    position:fixed;right:20px;bottom:20px;z-index:60;
+    width:56px;height:56px;border-radius:50%;
+    background:var(--gold);color:#1a1410;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 6px 20px rgba(0,0,0,.4);
+  }
+  .wa-float svg{width:26px;height:26px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="#top" class="logo" aria-label="WaxDiva home">
+      <img class="logo-word" src="assets/logo-wordmark.jpg" alt="WaxDiva">
+    </a>
+    <nav class="links">
+      <a href="#services">Services</a>
+      <a href="#speciality">Intimate</a>
+      <a href="#prices">Prices</a>
+      <a href="#retail">Aftercare</a>
+      <a href="#areas">Areas</a>
+    </nav>
+    <a class="btn btn-solid nav-cta" href="https://wa.me/27814950092?text=Hi%20Renelda%2C%20I%27d%20like%20to%20book%20a%20WaxDiva%20appointment.">Book Now</a>
+    <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+  </div>
+  <div id="mobileMenu">
+    <a href="#services">Services</a>
+    <a href="#speciality">Intimate</a>
+    <a href="#prices">Prices</a>
+    <a href="#retail">Aftercare</a>
+    <a href="#areas">Areas</a>
+    <a class="mm-cta" href="https://wa.me/27814950092?text=Hi%20Renelda%2C%20I%27d%20like%20to%20book%20a%20WaxDiva%20appointment.">Book on WhatsApp →</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-photo">
+        <img src="assets/hero-banner.jpg" alt="Smooth, professionally waxed skin">
+      </div>
+      <div class="hero-center">
+        <div class="eyebrow-line">Professional Waxing</div>
+        <h1>Smooth skin, <span class="accent">confidence</span>, always.</h1>
+        <p class="lede">Professional, discreet waxing with a calm, caring approach — at my home studio in Moedwil, or mobile at your location.</p>
+        <div class="badge-pill">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l2.6 5.6 6.2.6-4.6 4.2 1.3 6.1L12 15.8l-5.5 2.7 1.3-6.1-4.6-4.2 6.2-.6z"/></svg>Fully Qualified</span>
+          <span class="div"></span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.3 2.3 4.7-5"/></svg>SETA Registered</span>
+        </div>
+        <div class="hero-ctas">
+          <a class="btn btn-solid" href="https://wa.me/27814950092?text=Hi%20Renelda%2C%20I%27d%20like%20to%20book%20a%20WaxDiva%20appointment.">WhatsApp to Book</a>
+          <a class="btn btn-line" href="#prices">View Price List</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="peel-divider">
+    <div class="peel-sticky">
+      <div class="peel-content">
+        <span class="eyebrow-line">The WaxDiva Difference</span>
+        <h2>Smooth strips.<br><em>Smoother skin.</em></h2>
+        <p class="lede">Quality wax, a gentle hand, and results that last — every single time.</p>
+      </div>
+      <div class="peel-strip" id="peelStrip">
+        <svg viewBox="0 0 800 320" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="waxGrad" x1="0" y1="0" x2="0.3" y2="1">
+              <stop offset="0%" stop-color="#f0dba8"/>
+              <stop offset="45%" stop-color="#c9a15c"/>
+              <stop offset="100%" stop-color="#836536"/>
+            </linearGradient>
+            <linearGradient id="waxSheen" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#fff" stop-opacity="0"/>
+              <stop offset="50%" stop-color="#fff" stop-opacity=".22"/>
+              <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <path d="M0,0 H800 V240 Q700,300 600,245 Q500,190 400,255 Q300,315 200,250 Q100,190 0,255 Z" fill="url(#waxGrad)"/>
+          <path d="M0,0 H800 V240 Q700,300 600,245 Q500,190 400,255 Q300,315 200,250 Q100,190 0,255 Z" fill="url(#waxSheen)"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Waxing services</span>
+        <h2>From everyday waxing to <em>intimate care.</em></h2>
+        <p>Quality waxing for women and men, with privacy, comfort and attention to detail.</p>
+      </div>
+      <div class="service-grid">
+        <div class="service-card">
+          <svg class="service-glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 3v18M4 8h16M4 16h16"/></svg>
+          <h3>Face &amp; Body</h3>
+          <p>Lip, chin, full facial, underarms, arms, legs and full-body waxing.</p>
+          <a href="#prices">See prices →</a>
+        </div>
+        <div class="service-card">
+          <svg class="service-glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0112 6a5.5 5.5 0 019.5 6c-2.5 4.5-9.5 9-9.5 9z"/></svg>
+          <h3>Intimate Waxing</h3>
+          <p>Bikini, Brazilian, Hollywood and Manzillian — discreet and judgement-free.</p>
+          <a href="#speciality">Why WaxDiva →</a>
+        </div>
+        <div class="service-card">
+          <svg class="service-glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 2l2.5 7H21l-5.5 4.2L17.5 21 12 16.8 6.5 21l2-7.8L3 9h6.5z"/></svg>
+          <h3>Men's Waxing</h3>
+          <p>Full facial, chest, back, full body and intimate waxing for men.</p>
+          <a href="#prices">See prices →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="speciality" id="speciality">
+    <div class="wrap">
+      <div class="spec-visual">
+        <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.6">
+          <circle cx="50" cy="50" r="34"/>
+          <circle cx="50" cy="50" r="24"/>
+          <path d="M50 16v68M16 50h68" stroke-width="0.3"/>
+        </svg>
+      </div>
+      <div>
+        <span class="eyebrow">My speciality</span>
+        <h2>Intimate waxing, <em>done right.</em></h2>
+        <p style="color:var(--muted);margin-top:14px;max-width:44ch;">Intimate waxing can feel personal and intimidating. My aim is to make every appointment calm, professional and completely judgement-free.</p>
+        <ul class="spec-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 13l4 4L19 7"/></svg>One-on-one, discreet appointments</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 13l4 4L19 7"/></svg>Professional technique and quality products</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 13l4 4L19 7"/></svg>Hygienic tools and workspace</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 13l4 4L19 7"/></svg>Comfortable, unhurried approach</li>
+        </ul>
+        <a class="btn btn-line" href="https://wa.me/27814950092?text=Hi%20Renelda%2C%20I%27d%20like%20to%20ask%20about%20intimate%20waxing.">Ask About Intimate Waxing</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="pricing" id="prices">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Rates</span>
+        <h2>Simple, clear <em>pricing.</em></h2>
+        <p>Prices shown below are the current published rates. Please confirm before booking.</p>
+      </div>
+      <div class="price-groups">
+        <div class="price-group">
+          <h3>Face &amp; Upper Body</h3>
+          <div class="price-row"><span>Lip &amp; Chin Wax</span><span class="amt">R80</span></div>
+          <div class="price-row"><span>Full Facial — Ladies</span><span class="amt">R230</span></div>
+          <div class="price-row"><span>Full Facial — Men</span><span class="amt">R240</span></div>
+          <div class="price-row"><span>Ear &amp; Nose Wax</span><span class="amt">R110</span></div>
+          <div class="price-row"><span>Under Arm Wax</span><span class="amt">R110</span></div>
+          <div class="price-row"><span>Full Arm Wax</span><span class="amt">R230</span></div>
+          <div class="price-row"><span>Chest Wax</span><span class="amt">R230</span></div>
+          <div class="price-row"><span>Back Wax</span><span class="amt">R230</span></div>
+        </div>
+        <div class="price-group">
+          <h3>Intimate &amp; Legs</h3>
+          <div class="price-row"><span>Bikini Wax</span><span class="amt">R190</span></div>
+          <div class="price-row"><span>Brazilian Wax <span class="tag">POPULAR</span></span><span class="amt">R220</span></div>
+          <div class="price-row"><span>Hollywood Wax</span><span class="amt">R290</span></div>
+          <div class="price-row"><span>Manzillian</span><span class="amt">R300</span></div>
+          <div class="price-row"><span>Half Leg Wax</span><span class="amt">R170</span></div>
+          <div class="price-row"><span>Full Leg Wax</span><span class="amt">R240</span></div>
+          <div class="price-row"><span>Full Body — Female</span><span class="amt">R650</span></div>
+          <div class="price-row"><span>Full Body — Male</span><span class="amt">R750</span></div>
+        </div>
+      </div>
+      <p class="price-note">Prices are correct at the time of publishing and may change without notice. Message Renelda to confirm before booking.</p>
+    </div>
+  </section>
+
+  <section class="retail" id="retail">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Aftercare &amp; retail</span>
+        <h2>Take the <em>glow</em> home.</h2>
+        <p>Professional wax-care and skincare products are available to help you care for your skin between appointments.</p>
+      </div>
+      <div class="retail-grid">
+        <div class="product-card">
+          <div class="product-photo bg-green"><img src="assets/leopro-cream.jpg" alt="LeoPro V-jacial Enriched Cream"></div>
+          <div class="product-info">
+            <span class="product-brand">LeoPro</span>
+            <h3>V-jacial Enriched Cream</h3>
+            <p>A soothing daily cream to calm and nourish skin after waxing.</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-photo bg-gold"><img src="assets/leopro-lotion.jpg" alt="LeoPro V-jacial Lotion"></div>
+          <div class="product-info">
+            <span class="product-brand">LeoPro</span>
+            <h3>V-jacial Lotion</h3>
+            <p>A lightweight lotion that keeps intimate skin soft between visits.</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-photo bg-sage"><img src="assets/leopro-exfoliator.jpg" alt="LeoPro V-jacial Salt-Based Exfoliator"></div>
+          <div class="product-info">
+            <span class="product-brand">LeoPro</span>
+            <h3>V-jacial Salt-Based Exfoliator</h3>
+            <p>Gentle exfoliation that leaves skin smooth and radiant.</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-photo bg-cacao"><img src="assets/leospa-scrub.jpg" alt="LeoSpa Jojoba Enriched Salt Scrub"></div>
+          <div class="product-info">
+            <span class="product-brand">LeoSpa</span>
+            <h3>Jojoba Enriched Salt Scrub</h3>
+            <p>A nourishing full-body scrub with jojoba, shea and cacao butter.</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-photo bg-mint"><img src="assets/italwax-ingrown.jpg" alt="ItalWax Ingrown Hairs Therapy"></div>
+          <div class="product-info">
+            <span class="product-brand">ItalWax</span>
+            <h3>Ingrown Hairs Therapy</h3>
+            <p>Active paste and concentrated lotion that prevent ingrown hairs and ease discomfort.</p>
+          </div>
+        </div>
+      </div>
+      <div class="retail-cta">
+        <a class="btn btn-line" href="https://wa.me/27814950092?text=Hi%20Renelda%2C%20what%20wax-care%20products%20do%20you%20have%20in%20stock%3F">Ask what's in stock on WhatsApp →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="info-strip" id="areas">
+    <div class="info-grid">
+      <div class="info-cell">
+        <span class="eyebrow">When</span>
+        <h3>Mondays &amp; Tuesdays</h3>
+        <p>Appointments available at my home studio or I can come to you.</p>
+      </div>
+      <div class="info-cell">
+        <span class="eyebrow">Where</span>
+        <h3>Rustenburg &amp; Surrounds</h3>
+        <p>Moedwil · Swartruggens · Koster · Rustenburg · surrounding areas</p>
+      </div>
+      <div class="info-cell">
+        <span class="eyebrow">Who</span>
+        <h3>Ladies &amp; Men</h3>
+        <p>Everyone deserves professional, comfortable waxing without judgement.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-final">
+    <div class="wrap">
+      <span class="eyebrow">Ready when you are</span>
+      <h2>Let's get you <em>smooth.</em></h2>
+      <div class="hero-ctas">
+        <a class="btn btn-solid" href="https://wa.me/27814950092?text=Hi%20Renelda%2C%20I%27d%20like%20to%20book%20a%20WaxDiva%20appointment.">WhatsApp 081 495 0092</a>
+        <a class="btn btn-line" href="mailto:thewaxdiva.renelda@gmail.com">Email Me</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="brand-mark">
+    <div class="wrap">
+      <img class="brand-full" src="assets/logo-full.jpg" alt="WaxDiva — Professional Waxing. Smooth. Confident. You.">
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a href="#top" class="logo">
+          <img class="logo-word" src="assets/logo-wordmark.jpg" alt="WaxDiva">
+        </a>
+        <p style="margin-top:16px;">Professional, discreet waxing for ladies and men, delivered with care.</p>
+      </div>
+      <div class="foot-contact">
+        <a href="tel:+27814950092">081 495 0092</a>
+        <a href="mailto:thewaxdiva.renelda@gmail.com">thewaxdiva.renelda@gmail.com</a>
+        <span style="color:var(--muted);">Moedwil · Swartruggens · Koster · Rustenburg</span>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 WaxDiva — Renelda. All rights reserved.</span>
+      <span>Reg NR: 0814950092</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/27814950092?text=Hi%20Renelda%2C%20I%27d%20like%20to%20book%20a%20WaxDiva%20appointment." aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.3-1.39a9.9 9.9 0 004.69 1.19h.01c5.46 0 9.91-4.45 9.91-9.9 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2zm5.79 14.08c-.24.68-1.4 1.32-1.93 1.36-.5.05-1.02.24-3.42-.72-2.9-1.16-4.75-4.13-4.9-4.32-.14-.19-1.16-1.55-1.16-2.96 0-1.4.73-2.09 1-2.38.24-.26.53-.32.71-.32.18 0 .35 0 .5.01.16.01.38-.06.6.46.24.57.79 1.98.86 2.12.07.15.11.31.02.5-.09.19-.14.31-.28.47-.14.16-.29.36-.42.48-.14.13-.28.28-.13.55.16.28.7 1.15 1.5 1.86 1.03.92 1.9 1.21 2.18 1.35.28.14.44.12.6-.07.16-.19.68-.79.86-1.06.18-.28.36-.23.6-.14.24.09 1.52.72 1.78.85.26.13.43.19.5.3.06.11.06.62-.18 1.31z"/></svg>
+</a>
+
+<script>
+  var burger = document.getElementById('burgerBtn');
+  var menu = document.getElementById('mobileMenu');
+  burger.addEventListener('click', function(){
+    var isOpen = menu.classList.toggle('open');
+    burger.setAttribute('aria-expanded', isOpen);
+    burger.textContent = isOpen ? '✕' : '☰';
+  });
+  menu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      menu.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+      burger.textContent = '☰';
+    });
+  });
+
+  // Wax strip peel-off on scroll
+  (function(){
+    var section = document.querySelector('.peel-divider');
+    var strip = document.getElementById('peelStrip');
+    if(!section || !strip) return;
+    var ticking = false;
+    function update(){
+      var rect = section.getBoundingClientRect();
+      var vh = window.innerHeight;
+      var total = section.offsetHeight - vh;
+      var scrolled = -rect.top;
+      var progress = total > 0 ? Math.min(Math.max(scrolled / total, 0), 1) : 0;
+      var lift = progress * -115;
+      var rotate = progress * -14;
+      var opacity = 1 - Math.min(progress / 0.85, 1);
+      strip.style.transform = 'translateY(' + lift + '%) rotateX(' + rotate + 'deg)';
+      strip.style.opacity = opacity;
+      ticking = false;
+    }
+    window.addEventListener('scroll', function(){
+      if(!ticking){
+        window.requestAnimationFrame(update);
+        ticking = true;
+      }
+    }, {passive:true});
+    window.addEventListener('resize', update);
+    update();
+  })();
+</script>
+
+</body>
+</html>
