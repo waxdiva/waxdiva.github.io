@@ -107,30 +107,14 @@
   /* Hero */
   .hero{
     position:relative;
-    padding:28px 0 84px;
+    padding:88px 0 84px;
     overflow:hidden;
     background:
-      radial-gradient(ellipse 90% 60% at 50% -10%, rgba(201,161,92,.14), transparent 60%),
+      radial-gradient(ellipse 90% 60% at 50% -10%, rgba(201,161,92,.16), transparent 60%),
       radial-gradient(ellipse 60% 50% at 90% 20%, rgba(124,148,115,.10), transparent 60%),
       var(--bg);
   }
   .hero .wrap{position:relative;z-index:2;}
-  .hero-photo{
-    position:relative;
-    aspect-ratio:16/9.5;
-    overflow:hidden;
-    border:1px solid var(--line);
-    margin-bottom:44px;
-    filter:saturate(1.05) contrast(1.02);
-  }
-  .hero-photo img{
-    width:100%;height:100%;object-fit:cover;object-position:50% 35%;
-    filter:blur(.4px);
-  }
-  .hero-photo::after{
-    content:'';position:absolute;inset:0;
-    background:linear-gradient(180deg, rgba(13,11,10,.05) 0%, rgba(13,11,10,.55) 100%);
-  }
   .hero-center{max-width:640px;margin:0 auto;text-align:center;}
   .eyebrow-line{
     display:flex;align-items:center;justify-content:center;gap:14px;
@@ -160,7 +144,7 @@
   .badge-pill svg{width:14px;height:14px;flex:none;color:var(--gold);}
   .badge-pill .div{width:1px;height:14px;background:var(--line);}
   @media(min-width:720px){
-    .hero{padding:44px 0 120px;}
+    .hero{padding:130px 0 130px;}
     .hero h1{font-size:2.7rem;}
   }
 
@@ -229,20 +213,11 @@
   .product-photo{
     aspect-ratio:4/3.2;
     display:flex;align-items:center;justify-content:center;
-    padding:20px;
     position:relative;
     overflow:hidden;
   }
-  .product-photo img{
-    max-height:100%;width:auto;max-width:82%;
-    mix-blend-mode:multiply;
-    filter:contrast(1.03);
-  }
-  .bg-green{background:radial-gradient(circle at 35% 20%, #cfe0c4, #7c9473 75%);}
-  .bg-mint{background:radial-gradient(circle at 30% 25%, #d9e6de, #4a5c50 80%);}
-  .bg-cacao{background:radial-gradient(circle at 35% 25%, #e7cbb3, #5a3a2a 85%);}
-  .bg-sage{background:radial-gradient(circle at 30% 20%, #dbe4d3, #3f4a3a 80%);}
-  .bg-gold{background:radial-gradient(circle at 35% 20%, #f0ddb0, #8a6d3b 85%);}
+  .product-photo--styled{background:#0d0b0a;}
+  .product-photo--styled img{width:100%;height:100%;object-fit:cover;}
   .product-info{padding:22px 24px 26px;background:var(--panel);flex:1;}
   .product-brand{font-size:.68rem;letter-spacing:.16em;color:var(--gold);text-transform:uppercase;}
   .product-info h3{font-size:1.28rem;margin:8px 0 8px;}
@@ -350,9 +325,6 @@
 
   <section class="hero">
     <div class="wrap">
-      <div class="hero-photo">
-        <img src="assets/hero-banner.jpg" alt="Smooth, professionally waxed skin">
-      </div>
       <div class="hero-center">
         <div class="eyebrow-line">Professional Waxing</div>
         <h1>Smooth skin, <span class="accent">confidence</span>, always.</h1>
@@ -496,7 +468,7 @@
       </div>
       <div class="retail-grid">
         <div class="product-card">
-          <div class="product-photo bg-green"><img src="assets/leopro-cream.jpg" alt="LeoPro V-jacial Enriched Cream"></div>
+          <div class="product-photo product-photo--styled"><img src="assets/leopro-cream.jpg" alt="WaxDiva LeoPro V-jacial Enriched Cream"></div>
           <div class="product-info">
             <span class="product-brand">LeoPro</span>
             <h3>V-jacial Enriched Cream</h3>
@@ -504,7 +476,7 @@
           </div>
         </div>
         <div class="product-card">
-          <div class="product-photo bg-gold"><img src="assets/leopro-lotion.jpg" alt="LeoPro V-jacial Lotion"></div>
+          <div class="product-photo product-photo--styled"><img src="assets/leopro-lotion.jpg" alt="WaxDiva LeoPro V-jacial Lotion"></div>
           <div class="product-info">
             <span class="product-brand">LeoPro</span>
             <h3>V-jacial Lotion</h3>
@@ -512,7 +484,7 @@
           </div>
         </div>
         <div class="product-card">
-          <div class="product-photo bg-sage"><img src="assets/leopro-exfoliator.jpg" alt="LeoPro V-jacial Salt-Based Exfoliator"></div>
+          <div class="product-photo product-photo--styled"><img src="assets/exfoliator-styled.jpg" alt="WaxDiva LeoPro V-jacial Salt-Based Exfoliator"></div>
           <div class="product-info">
             <span class="product-brand">LeoPro</span>
             <h3>V-jacial Salt-Based Exfoliator</h3>
@@ -520,7 +492,7 @@
           </div>
         </div>
         <div class="product-card">
-          <div class="product-photo bg-cacao"><img src="assets/leospa-scrub.jpg" alt="LeoSpa Jojoba Enriched Salt Scrub"></div>
+          <div class="product-photo product-photo--styled"><img src="assets/leospa-scrub.jpg" alt="WaxDiva Jojoba Enriched Salt Scrub"></div>
           <div class="product-info">
             <span class="product-brand">LeoSpa</span>
             <h3>Jojoba Enriched Salt Scrub</h3>
@@ -528,7 +500,7 @@
           </div>
         </div>
         <div class="product-card">
-          <div class="product-photo bg-mint"><img src="assets/italwax-ingrown.jpg" alt="ItalWax Ingrown Hairs Therapy"></div>
+          <div class="product-photo product-photo--styled"><img src="assets/italwax-ingrown.jpg" alt="ItalWax Ingrown Hairs Therapy"></div>
           <div class="product-info">
             <span class="product-brand">ItalWax</span>
             <h3>Ingrown Hairs Therapy</h3>
